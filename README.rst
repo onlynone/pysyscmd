@@ -1,5 +1,5 @@
 ===============================
-System Git
+System Commands
 ===============================
 
 .. image:: https://img.shields.io/pypi/v/pysyscmd.svg
