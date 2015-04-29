@@ -21,7 +21,7 @@ requirements = [
 setup(
     name='pysyscmd',
     version='0.1.0',
-    description="Utility to call git from python",
+    description="Utility to call system commands from python",
     long_description=readme + '\n\n' + history,
     author="Steven Willis",
     author_email='onlynone@gmail.com',
