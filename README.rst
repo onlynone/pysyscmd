@@ -34,8 +34,10 @@ Examples::
 
   # Run 'ls' with no arguments
   >>> res = ls()
-  #README.rst# CONTRIBUTING.rst LICENSE README.rst requirements.txt setup.py tox.ini
-  AUTHORS.rst HISTORY.rst MANIFEST.in docs setup.cfg syscmd
+  AUTHORS.rst             MANIFEST.in             setup.cfg
+  CONTRIBUTING.rst        README.rst              setup.py
+  HISTORY.rst             docs                    syscmd
+  LICENSE                 requirements.txt        tox.ini
 
   # Run 'ls' with the '-l' option on 'README.rst'
   >>> res = ls('-l', 'README.rst')
