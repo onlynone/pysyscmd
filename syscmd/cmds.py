@@ -8,7 +8,7 @@ class Syscmd(object):
             *args: The positional arguments are used as arguments to the
             command. For example, the following python code:
 
-                cmd("git, "commit", "--help")
+                _cmd("git, "commit", "--help")
 
             would execute:
 
