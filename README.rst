@@ -12,7 +12,7 @@ Import any program that's on your PATH from ``syscmd.cmds`` and you'll get a
 function that executes the program with the given positional arguments. By,
 default, the function uses ``subprocess.check_call`` to execute the program. But
 this can be changed by passing in one of ``syscmd.CALL``, ``syscmd.CHECK_CALL``,
-``syscmd.CHECK_OUTPUT`` as the ``f`` argument to your function to get the
+or ``syscmd.CHECK_OUTPUT`` as the ``f`` argument to your function to get the
 respective ``subprocess`` function. Expect the same behavior from the imported
 ``syscmd`` functions as the ``subprocess`` functions, eg. return value, standard
 in/out/error, etc.
@@ -56,14 +56,15 @@ Examples::
       raise CalledProcessError(retcode, cmd)
   subprocess.CalledProcessError: Command '('/usr/bin/false',)' returned non-zero exit status 1
 
-  # Uh-oh... non-zero exit code causes exception because its run with
+  # Uh-oh... a non-zero exit code raises an exception because it's run with
   # 'subprocess.check_call'
 
   # Import CALL from syscmd
   >>> from syscmd import CALL
   >>> res = false(f=CALL)
 
-  # Now running 'false' doesn't cause an exception, and it returns the exit code
+  # Now running 'false' doesn't cause an exception, but we still get the exit
+  # code as the return value
   >>> print res
   1
 
