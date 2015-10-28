@@ -20,7 +20,7 @@ requirements = [
 
 setup(
     name='pysyscmd',
-    version='0.1.0',
+    version='1.0.0',
     description="Utility to call system commands from python",
     long_description=readme + '\n\n' + history,
     author="Steven Willis",
@@ -37,8 +37,11 @@ setup(
     zip_safe=False,
     keywords='syscmd',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
+        'Intended Audience :: Information Technology',
+        'Intended Audience :: Science/Research',
+        'Intended Audience :: System Administrators',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
