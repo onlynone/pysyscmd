@@ -2,7 +2,7 @@
 
 __author__ = 'Steven Willis'
 __email__ = 'onlynone@gmail.com'
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 
 import subprocess
 

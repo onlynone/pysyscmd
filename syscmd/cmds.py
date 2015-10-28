@@ -2,33 +2,34 @@
 
 class Syscmd(object):
     def _cmd(self, cmd, *args, **kwargs):
-        """Execute git commands
+        """Execute system commands
 
         Args:
             *args: The positional arguments are used as arguments to the
             command. For example, the following python code:
 
-                cmd("git, "commit", "--help")
+                _cmd("git, "commit", "--help")
 
             would execute:
 
                 git commit --help
 
-            f: One of CALL, CHECK_CALL, or CHECK_OUTPUT. Corresponds to the function
-            from the subprocess module called to execute git. Defaults to CHECK_CALL
+            f: One of CALL, CHECK_CALL, or CHECK_OUTPUT. Corresponds to the
+            function from the subprocess module called to execute the command.
+            Defaults to CHECK_CALL
 
             **kwargs: The keyword arguments are passed through to the subprocess
             function as-is.
 
         Returns:
-            Whatever is returned by the respective subprocess function. For example,
-            f=CALL would return the returncode attribute, and f=CHECK_OUTPUT would
-            return the content of stdout.
+            Whatever is returned by the respective subprocess function. For
+            example, f=CALL would return the returncode attribute, and
+            f=CHECK_OUTPUT would return the content of stdout.
 
         Exmples:
             The following call:
 
-                cmd("git", "commit", "-m", "Commit Message", cwd="/path/to/repo")
+                _cmd("git", "commit", "-m", "Commit Message", cwd="/path/to/repo")
 
             results in:
 
@@ -36,13 +37,11 @@ class Syscmd(object):
 
             And:
 
-                cmd("git", "checkout", "-b", "branch_name", f=CHECK_OUTPUT, cwd="/path/to/repo")
+                _cmd("git", "checkout", "-b", "branch_name", f=CHECK_OUTPUT, cwd="/path/to/repo")
 
             results in:
 
                 subprocess.check_output(["git", "checkout", "-b", "branch_name"], cwd="/path/to/repo")
-
-
         """
 
         import syscmd
