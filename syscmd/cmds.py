@@ -70,7 +70,16 @@ class Syscmd(object):
 
         return None
 
+    def _builtin_cd(self, path):
+        import os
+        os.chdir(path)
+
     def __getattr__(self, name):
+        try:
+            return self.__getattribute__("_builtin_%s" % (name,))
+        except AttributeError as e:
+            pass
+
         from functools import partial
         cmd = self._which(name)
 
