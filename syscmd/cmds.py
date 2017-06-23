@@ -75,9 +75,20 @@ class Syscmd(object):
         cmd = self._which(name)
 
         if cmd != None:
-            return partial(self._cmd, cmd)
+            return self._repr_call(partial(self._cmd, cmd))
 
         raise AttributeError("'module' object has no attribute %r" % (name,))
+
+    def _repr_call(self, func):
+        class _repr_call(object):
+            def __init__(self, func):
+                self.func = func
+            def __repr__(self):
+                return str(self.func())
+            def __getattr__(self, name):
+                return getattr(self.func, name)
+
+        return _repr_call(func)
 
 import sys
 sys.modules[__name__] = Syscmd()
